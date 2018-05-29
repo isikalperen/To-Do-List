@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+  </head>
+  <body>
+
+  <div class="" id="addapp">
+    <h1 style="margin-left:40%; margin-top:3%;">To-Do App List</h1>
+    <input style="margin-left:40%; height:30px; width: 250px; border: solid; border-width: 3px;" type="text" id="input" placeholder="Please Enter App">
+    <button style="height:35px; background:#343a40; color:white; font-size:20px;" type="button" onclick="newElement()" > + </button>
+  </div>
+
+  <ul id="List" style="margin-left:40%;"> </ul>
+
+    <script>
+      function newElement() {
+        let li = document.createElement("li");
+        let inputValue = document.getElementById('input').value;
+        let xyz = document.createTextNode(inputValue);
+        li.appendChild(xyz);
+        if (inputValue === '')
+            alert("Please Enter Value ");
+        else
+            document.getElementById('List').appendChild(li);
+        document.getElementById('input').value = "";
+
+        let span = document.createElement("SPAN");
+        let t = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(t);
+        li.appendChild(span);
+
+        for (let i = 0 ; i < close.length ; i++) {
+          close[i].onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+      }
+      // Delete
+      let close = document.getElementsByClassName('close');
+      for (let i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            let div = this.parentElement;
+            div.style.display = "none";
+        }
+      }
+
+    </script>
+  </body>
+</html>
